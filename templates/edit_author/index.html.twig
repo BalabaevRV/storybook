@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block title%} — редактирование автора{% endblock %}
+
+{% block body %}
+    <h1 class='title'>Редактирование автора</h1>
+    {{ form(form, {'method': 'POST'}) }}
+    <a class='btn btn--link' href='/'>Вернуться к списку авторов</a>
+{% endblock %}

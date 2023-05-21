@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title%} — все авторы{% endblock %}
+
+{% block body %}
+    <h1 class='title'>База данных книг<h1>
+    <ul>
+        {% for author in authors %}
+            {% include "blocks/authorCard.html.twig" %}
+        {% else %}
+            <li>Авторов еще не добавили. Но скоро они здесь будут</li> 
+        {% endfor %}
+    <ul>
+    <a class='btn' href='/edit/author/'>Добавить автора</a>
+{% endblock %}

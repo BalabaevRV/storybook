@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block title%} — список книг {{author.firstName}} {{author.secondName}}{% endblock %}
+
+{% block body %}
+    <h1 class='title'>Список книг {{author.firstName}} {{author.secondName}}</h1>
+    <ul>
+        {% for book in books %}
+            <li class='authorList__item'>
+                <p class='author__name'>{{book.Name}}</p>
+                <p class='author__name'>{{book.year}}</p>
+                <div class='btnGroup'>
+                    <a class='btn btn--secondary' href='/edit/book/{{author.id}}/{{book.id}}'>Редактирование книги</a>
+                    <a class='btn btn--link' href='/delete/book/{{author.id}}/{{book.id}}' >Удалить книгу</a>
+                <div>
+            </li>
+        {% else %}
+            <li>У автора не добавлено еще не одной книги</li> 
+        {% endfor %}
+    <ul>
+    <a class='btn' href='/edit/book/{{author.id}}'>Добавить книгу</a>
+    <a class='btn btn--link' href='/'>Вернуться к списку авторов</a>
+{% endblock %}
